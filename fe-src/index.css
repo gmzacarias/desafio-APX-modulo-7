@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #CDD1DC;
+}
+
+.root {
+    height: 100%;
+    --body-color-root: #CDD1DC;
+    --font-family-root: 'Poppins', sans-serif;
+    --blue-color-root: #17283A;
+    --grey-color-root: #8291a5;
+    --grey-bordercolor-root: #8B95AD;
+    --green-color-root: #97EA9F;
+    --red-color-root: #b74150;
+    --white-color-root: #d8d8d8;
+    --black-color-root: #181818;
+}
+
+.popup-styling.mapboxgl-popup .mapboxgl-popup-content {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    ;
+}
+
+
+
