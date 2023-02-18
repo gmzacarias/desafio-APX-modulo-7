@@ -52,7 +52,7 @@ customElements.define("myreports-page", class MyReportsPage extends HTMLElement 
     const style = document.createElement("style")
     style.innerHTML = `
     .myReports-container{
-      width: 500px;
+      width: 90%;
       height: 100%;
       margin: 0 auto;
       padding: 50px 30px;
@@ -65,8 +65,8 @@ customElements.define("myreports-page", class MyReportsPage extends HTMLElement 
     }
   
     .myReports_title{
-      width: 340px;
-      height: 170px;
+      width: 328px;
+      height: 163px;
       padding: 20px;
       font-size: 40px;
       font-weight: bold;
@@ -78,6 +78,15 @@ customElements.define("myreports-page", class MyReportsPage extends HTMLElement 
       grid-template-columns: 250px 1fr;
       column-gap: 10px;
       grid-row-gap: 20px;
+    }
+
+    @media(max-width:768px){
+      .myReports_pets-container{
+        display: grid;
+        grid-template-columns: none;
+        column-gap: 10px;
+        grid-row-gap: 20px;
+      }
     }
 
     /* Popup error */

@@ -156,7 +156,7 @@ customElements.define("report-pet-page", class ReportPet extends HTMLElement {
     const style = document.createElement("style");
     style.innerHTML = `
     .reportPet-container{
-      width: 500px;
+      width: 80%;
       height: 100%;
       margin:0 auto;
       padding: 50px 0;
@@ -199,7 +199,7 @@ customElements.define("report-pet-page", class ReportPet extends HTMLElement {
     }
 
     .reportPet-dropzone_img{
-      width:500px;
+      width:100%;
       height:375px;
     }
   

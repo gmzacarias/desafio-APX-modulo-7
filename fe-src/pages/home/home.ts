@@ -88,7 +88,7 @@ customElements.define("home-page", class HomePage extends HTMLElement {
     const style = document.createElement("style")
     style.innerHTML = `
     .home-container {
-      width: 500px;
+      width: 60%;
       height: 100%;
       margin:0 auto;
       padding: 50px 0;
@@ -99,44 +99,54 @@ customElements.define("home-page", class HomePage extends HTMLElement {
       font-family:var(--font-family-root);
       color:var(--blue-color-root);
     }
-  
+    
     .title-home {
-      width: 450px;
-      height: 156px;
+      width: 375px;
+      height: 218px;
       padding: 20px;
       font-size: 40px;
       font-weight:bold;
       text-align: center; 
     }
-  
+    
     .p-home {
-      width: 430px;
-      height: 71px;
+      width: 328px;
+      height: 80px;
       font-size: 16px;
       font-weight: bold;
       text-align: center;
       padding: 10px;
     }
-  
+    
     .my-location{
       padding:10px 0 30px 0;
     }
-  
+    
     .pets-container {
+      width:96%;
       display: grid;
       grid-template-columns: 250px 1fr;
       column-gap: 10px;
       grid-row-gap: 20px;
     }
-  
+
+    @media(max-width:768px){
+      .pets-container{
+        grid-template-columns: none;
+        grid-template-rows:310px 1fr;
+        grid-row-gap: 10px;
+      }
+    }
+
+
     .pet-card_container {
       display:none;
     }
- 
+   
     .pet-card_container.active {
       display:flex;  
     }
-
+  
     /* Popup error */
     .popup-error_box {
       background-color:var(--white-color-root);
@@ -146,7 +156,7 @@ customElements.define("home-page", class HomePage extends HTMLElement {
       transform: translate(-50%, -50%);
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
-      
+        
     .popup-error_box.active{
       top:550px;
       width: 325px;
@@ -162,18 +172,18 @@ customElements.define("home-page", class HomePage extends HTMLElement {
       transition: all 0.3s ease;
       transform: translate(-50%, -50%) scale(1.2);
     }
-      
+        
     .popup-error_box i {
       color:var(--red-color-root);
       font-size: 60px;
     }
-    
+      
     .popup-error_box p {
       font-size: 16px;
       font-weight:bold;
       text-align: center;
     }
-   
+     
     .popup-error_box .close-button {
       top:122px;
       margin: 0 10px;
@@ -182,7 +192,7 @@ customElements.define("home-page", class HomePage extends HTMLElement {
       font-weight:bold;
       cursor:pointer;
     }
-      
+        
     .close-button {
       background-color: var(--green-color-root);
       padding: 14px 22px;
@@ -193,6 +203,7 @@ customElements.define("home-page", class HomePage extends HTMLElement {
       font-weight:bold;
       position:absolute;
     }
+   
     `;
     this.appendChild(style);
   };

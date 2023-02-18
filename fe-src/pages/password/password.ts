@@ -68,7 +68,7 @@ customElements.define("password-page", class PasswordPage extends HTMLElement {
     const style = document.createElement("style")
     style.innerHTML = `
     .password-container{
-      width: 500px;
+      width: 90%;
       height: 100%;
       margin:0 auto;
       padding: 50px 30px;

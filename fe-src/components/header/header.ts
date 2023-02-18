@@ -149,6 +149,8 @@ customElements.define("header-component", class HeaderComponent extends HTMLElem
     .fa-rectangle-xmark {
       display: none;
     }
+
+
         
      @media(max-width:768px) {
        .fa-bars {
@@ -184,8 +186,9 @@ customElements.define("header-component", class HeaderComponent extends HTMLElem
         
        #nav-bar_menu.active {
          background-color: var(--blue-color-root);
-         top: 100%;
-         left: 63%;
+         top: 99%;
+         left: 0%;
+         width:100%;
          padding: 10px 10px;
          display: flex;
          flex-direction: column;
@@ -194,7 +197,7 @@ customElements.define("header-component", class HeaderComponent extends HTMLElem
          gap: 10px;
          list-style-type: none;
          position: absolute;
-         z-index: 1;
+         z-index: 2;
        }
         
        #nav-bar_menu-links {

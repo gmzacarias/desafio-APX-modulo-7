@@ -1,5 +1,5 @@
-// const API_BASE_URL = "http://localhost:3000";
-const API_BASE_URL = "https://desafio-apx-modulo-7.onrender.com"
+const API_BASE_URL = "http://localhost:3000";
+// const API_BASE_URL = "https://desafio-apx-modulo-7.onrender.com"
 import { map } from "lodash"
 
 export const state = {

@@ -169,7 +169,7 @@ customElements.define("edit-pet-page", class EditPet extends HTMLElement {
     const style = document.createElement("style");
     style.innerHTML = `
     .editPet-container{
-      width: 500px;
+      width: 80%;
       height: 100%;
       margin:0 auto;
       padding: 50px 0;
@@ -182,7 +182,7 @@ customElements.define("edit-pet-page", class EditPet extends HTMLElement {
     }
 
     .editPet-title{
-      width: 480px;
+      width: 375px;
       height: 157px;
       padding: 20px;
       font-size: 40px;
@@ -212,7 +212,7 @@ customElements.define("edit-pet-page", class EditPet extends HTMLElement {
     }
 
     .editPet-dropzone_img{
-      width:500px;
+      width:100%;
       height:375px;
     }
   
