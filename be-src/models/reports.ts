@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-import { sequelize } from './sequelize';
+import { sequelize } from '../lib/sequelize';
 
 export class Report extends Model { }
 
@@ -8,5 +8,5 @@ Report.init({
   phone_number: DataTypes.INTEGER,
   pet_info: DataTypes.STRING
 }, {
-  sequelize,modelName: 'report'
+  sequelize, modelName: 'report'
 });
