@@ -162,7 +162,7 @@ export const state = {
 
 
   /*Mi posicion actual determinada por la latitud y longitud*/
-  myCurrentGeoLocation(lng, lat) {
+  async myCurrentGeoLocation(lng, lat) {
     const currentState = this.getState()
     currentState.petToReportLat = lat
     currentState.petToReportLng = lng
