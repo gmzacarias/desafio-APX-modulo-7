@@ -11,7 +11,7 @@ async function saveGeoLocation(data) {
         lat: data.lat,
         lng: data.lng
       }
-    }).then(() => { })
+    }).then(() => { console.log(algoliaRes)})
   } catch (error) {
     throw error
 

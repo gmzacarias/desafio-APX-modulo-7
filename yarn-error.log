@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\gasto\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @typex/mapbox
+  C:\Program Files\nodejs\node.exe C:\Users\gasto\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/lodash
 
 PATH: 
-  C:\Users\gasto\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\gasto\bin;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Users\gasto\AppData\Local\Microsoft\WindowsApps;C:\adb;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Users\gasto\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gasto\AppData\Roaming\npm;C:\Users\gasto\AppData\Local\GitHubDesktop\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Users\gasto\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\gasto\bin;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Users\gasto\AppData\Local\Microsoft\WindowsApps;C:\adb;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Users\gasto\.console-ninja\.bin;C:\Users\gasto\AppData\Local\Microsoft\WindowsApps;C:\Users\gasto\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gasto\AppData\Roaming\npm;C:\Users\gasto\AppData\Local\GitHubDesktop\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   1.22.17
@@ -14,17 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@typex%2fmapbox: Not found
-      at Request.params.callback [as _callback] (C:\Users\gasto\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:67029:18)
-      at Request.self.callback (C:\Users\gasto\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140883:22)
-      at Request.emit (events.js:375:28)
-      at Request.<anonymous> (C:\Users\gasto\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141855:10)
-      at Request.emit (events.js:375:28)
-      at IncomingMessage.<anonymous> (C:\Users\gasto\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141777:12)
-      at Object.onceWrapper (events.js:481:28)
-      at IncomingMessage.emit (events.js:387:35)
-      at endReadableNT (internal/streams/readable.js:1317:12)
-      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+  Error: ENOENT: no such file or directory, scandir 'C:\apxgmz\m7-backend-part2\desafio-modulo-7\desafio-APX-modulo-7 final\node_modules\balanced-match\.github'
 
 npm manifest: 
   {
@@ -39,14 +29,16 @@ npm manifest:
       "build:be": "tsc",
       "build:fe": "parcel build ./fe-src/index.html --dist-dir ./dist",
       "build": "yarn build:be && yarn build:fe",
-      "start": "node ./be-dist/be-src/index.js",
+      "start": "node ./be-dist/be-src/api.js",
       "dev:sync": "ts-node ./be-src/sync.ts",
       "dev:sequelize": "ts-node ./be-src/models/sequelize.ts"
     },
     "dependencies": {
+      "@parcel/bundler-default": "^2.8.3",
       "@sendgrid/mail": "^7.7.0",
       "@types/cors": "^2.8.13",
       "@types/express": "^4.17.15",
+      "@types/mapbox": "^1.6.42",
       "@types/node": "^18.7.6",
       "@vaadin/router": "^1.7.4",
       "@zerollup/ts-transform-paths": "^1.7.18",
@@ -58,6 +50,7 @@ npm manifest:
       "dropzone": "5.4.0",
       "express": "^4.18.2",
       "jsonwebtoken": "^9.0.0",
+      "leaflet": "^1.9.3",
       "lodash": "^4.17.21",
       "mapbox": "^1.0.0-beta10",
       "mapbox-gl": "^2.12.0",
@@ -387,7 +380,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@msgpackr-extract/msgpackr-extract-win32-x64/-/msgpackr-extract-win32-x64-2.2.0.tgz#016d855b6bc459fd908095811f6826e45dd4ba64"
     integrity sha512-XrC0JzsqQSvOyM3t04FMLO6z5gCuhPE6k4FXuLK5xf52ZbdvcFe1yBmo7meCew9B8G2f0T9iu9t3kfTYRYROgA==
   
-  "@parcel/bundler-default@2.8.3":
+  "@parcel/bundler-default@2.8.3", "@parcel/bundler-default@^2.8.3":
     version "2.8.3"
     resolved "https://registry.yarnpkg.com/@parcel/bundler-default/-/bundler-default-2.8.3.tgz#d64739dbc2dbd59d6629861bf77a8083aced5229"
     integrity sha512-yJvRsNWWu5fVydsWk3O2L4yIy3UZiKWO2cPDukGOIWMgp/Vbpp+2Ct5IygVRtE22bnseW/E/oe0PV3d2IkEJGg==
@@ -1063,12 +1056,26 @@ Lockfile:
     dependencies:
       "@types/node" "*"
   
+  "@types/leaflet@^0":
+    version "0.7.35"
+    resolved "https://registry.yarnpkg.com/@types/leaflet/-/leaflet-0.7.35.tgz#5eb474dee4ce4b126292cd0ba4db5e09190649a2"
+    integrity sha512-BK+pa9a9dYC1qJyYQulqkRI9N+ZnV4ycAmNSOUmom7C6xaAdmrhOoiCiDMhSQklyjPpasy3KWRTkTRTJuDbBSw==
+    dependencies:
+      "@types/geojson" "*"
+  
   "@types/mapbox-gl@^2.7.10":
     version "2.7.10"
     resolved "https://registry.yarnpkg.com/@types/mapbox-gl/-/mapbox-gl-2.7.10.tgz#a3a32a366bad8966c0a40b78209ed430ba018ce1"
     integrity sha512-nMVEcu9bAcenvx6oPWubQSPevsekByjOfKjlkr+8P91vawtkxTnopDoXXq1Qn/f4cg3zt0Z2W9DVsVsKRNXJTw==
     dependencies:
       "@types/geojson" "*"
+  
+  "@types/mapbox@^1.6.42":
+    version "1.6.42"
+    resolved "https://registry.yarnpkg.com/@types/mapbox/-/mapbox-1.6.42.tgz#e15d33d738b2242e490cc49985aa771ffc0050ef"
+    integrity sha512-mQlrYBOwqz/kGG8P5KOTXLRMlZFLNFDdxzNaEukig3Uh9I2ukk6LXg5yaCUS8bk3/3ie6o3h/ZKAaXuwTljpdw==
+    dependencies:
+      "@types/leaflet" "^0"
   
   "@types/mime@*":
     version "3.0.1"
@@ -2421,6 +2428,11 @@ Lockfile:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/kdbush/-/kdbush-3.0.0.tgz#f8484794d47004cc2d85ed3a79353dbe0abc2bf0"
     integrity sha512-hRkd6/XW4HTsA9vjVpY9tuXJYLSlelnkTmVFu4M9/7MIYQtFcHpbugAU7UbOfjOiVSVYl2fqgBuJ32JUmRo5Ew==
+  
+  leaflet@^1.9.3:
+    version "1.9.3"
+    resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.9.3.tgz#52ec436954964e2d3d39e0d433da4b2500d74414"
+    integrity sha512-iB2cR9vAkDOu5l3HAay2obcUHZ7xwUBBjph8+PGtmW/2lYhbLizWtG7nTeYht36WfOslixQF9D/uSIzhZgGMfQ==
   
   levn@~0.3.0:
     version "0.3.0"

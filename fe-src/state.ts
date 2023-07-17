@@ -1,7 +1,6 @@
-// const API_BASE_URL = "http://localhost:3000";
-const API_BASE_URL = "https://desafio-apx-modulo-7.onrender.com"
-import { map } from "lodash"
-
+const API_BASE_URL = "http://localhost:3000";
+// const API_BASE_URL = "https://desafio-apx-modulo-7.onrender.com"
+import {map} from "lodash"
 export const state = {
   data: {
     myPets: []
@@ -230,7 +229,8 @@ export const state = {
   },
 
   /*Mapeo de los datos de la mascota*/
-  dataPets(data) {
+
+ async dataPets(data) {
     let dataPetsMap = map(data)
     let dataPetsRes = dataPetsMap.map(pet => {
       return {
