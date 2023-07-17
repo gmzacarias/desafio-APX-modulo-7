@@ -35,6 +35,8 @@ customElements.define("home-page", class HomePage extends HTMLElement {
       showPopup.classList.remove("active")
     });
 
+ 
+    
     buttonlocation.addEventListener("click", (e) => {
       e.preventDefault()
       const myUbication = navigator.geolocation;
@@ -43,9 +45,9 @@ customElements.define("home-page", class HomePage extends HTMLElement {
         currentState.lng = position.coords.longitude;
         state.setState(currentState)
 
-        state.petsAroundMe().then(async (petsRes) => {
+  
+       state.petsAroundMe().then(async (petsRes) => {
           const pets = petsRes.filter((p) => { return p.found == false });
-
           console.log(pets)
 
           if (pets < 1) {
@@ -63,13 +65,12 @@ customElements.define("home-page", class HomePage extends HTMLElement {
             }
 
             pets.forEach(pet => {
-
               const petEl = document.createElement("div");
               petEl.innerHTML = `<pet-card class="pet-card"
               id=${pet.id} 
               source=${pet.imageURL}
               name=${pet.name} 
-              zone=${pet.zoneReport} 
+              zone="${pet.zoneReport}" 
               reportable=${myPetsById ? (myPetsById.includes((pet.id).toString()) ? "false" : "true") : "true"}>
               </pet-card>`
               petEl.addEventListener("report", (e: any) => {
@@ -88,7 +89,7 @@ customElements.define("home-page", class HomePage extends HTMLElement {
     const style = document.createElement("style")
     style.innerHTML = `
     .home-container {
-      width: 60%;
+      width: 100%;
       height: 100%;
       margin:0 auto;
       padding: 50px 0;
@@ -98,8 +99,9 @@ customElements.define("home-page", class HomePage extends HTMLElement {
       gap: 15px;  
       font-family:var(--font-family-root);
       color:var(--blue-color-root);
+      
     }
-    
+
     .title-home {
       width: 375px;
       height: 218px;
@@ -122,30 +124,32 @@ customElements.define("home-page", class HomePage extends HTMLElement {
       padding:10px 0 30px 0;
     }
     
-    .pets-container {
-      width:96%;
-      display: grid;
-      grid-template-columns: 250px 1fr;
-      column-gap: 10px;
-      grid-row-gap: 20px;
+    .pets-container{
+      width:250px;
+      display: flex;
+      flex-direction:column;
+      flex-wrap:wrap;
+      gap: 15px;
     }
-
-    @media(max-width:768px){
-      .pets-container{
-        grid-template-columns: none;
-        grid-template-rows:310px 1fr;
-        grid-row-gap: 10px;
-      }
-    }
-
-
+    
     .pet-card_container {
       display:none;
     }
-   
+    
     .pet-card_container.active {
       display:flex;  
     }
+    
+        @media(min-width:769px){
+          .home-container {
+            width: 70%; 
+          }
+          
+          .pets-container {
+            width:515px;
+            flex-direction:row;
+          }
+        }
   
     /* Popup error */
     .popup-error_box {

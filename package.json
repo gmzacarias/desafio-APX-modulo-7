@@ -10,7 +10,7 @@
     "build:be": "tsc",
     "build:fe": "parcel build ./fe-src/index.html --dist-dir ./dist",
     "build": "yarn build:be && yarn build:fe",
-    "start": "node ./be-dist/be-src/api.js",
+    "start": "concurrently \"node ./be-dist/be-src/api.js\" \"yarn dev:fe\"",
     "dev:sync": "ts-node ./be-src/sync.ts",
     "dev:sequelize": "ts-node ./be-src/models/sequelize.ts"
   },

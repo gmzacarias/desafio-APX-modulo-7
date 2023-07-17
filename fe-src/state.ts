@@ -1,6 +1,10 @@
-// const API_BASE_URL = "http://localhost:3000";
-const API_BASE_URL = "https://desafio-apx-modulo-7.onrender.com"
-import { map } from "lodash"
+import "dotenv/config";
+import { map } from "lodash";
+
+const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  ? "https://desafio-apx-modulo-7.onrender.com" 
+  : "http://localhost:3000";
+  
 export const state = {
   data: {
     myPets: []

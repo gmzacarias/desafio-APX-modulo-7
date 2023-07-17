@@ -90,7 +90,7 @@ customElements.define("pet-card", class PetCard extends HTMLElement {
       </div>
       <div class="card_text-container">
         <h3>${this.name}</h3>
-        <h4>${this.zoneReport}</h4>
+        <p class="zone">Zona:${this.zoneReport}</p>
         <h4>
           <p>Estado:${petbusqueda}</p>
         </h4>
@@ -144,6 +144,8 @@ customElements.define("pet-card", class PetCard extends HTMLElement {
       display:flex;
       flex-direction:column;
       justify-content:space-between;
+      overflow: visible;
+  white-space: normal;
     }
 
     .card_report-info{

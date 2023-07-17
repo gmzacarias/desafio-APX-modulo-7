@@ -86,7 +86,7 @@ customElements.define("report-pet-page", class ReportPet extends HTMLElement {
           map.setCenter([lng, lat]);
           map.setZoom(14);
           state.myCurrentGeoLocation(lng, lat);
-          console.log(`La direccion ingresada es ${firstResult.place_name_es}`)
+          console.log(`La direccion ingresada es ${firstResult.place_name}`)
         });
       });
 

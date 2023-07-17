@@ -7,10 +7,13 @@ customElements.define("mydata-page", class myData extends HTMLElement {
   }
   connectedCallback() {
     const currentState = state.getState()
+    const isLoggedIn = currentState.loggedInUser;
     if (!currentState.loggedInUser && !currentState.newUser) {
       Router.go("/login")
+    } else if (isLoggedIn) {
+      this.render()
+      console.log(isLoggedIn)
     }
-    this.render()
   };
 
   addListeners() {
@@ -38,6 +41,10 @@ customElements.define("mydata-page", class myData extends HTMLElement {
           password: target["password"].value,
         }
         state.signUpOrUpdateUser(myData).then(() => {
+          target["name"].value = "";
+          target["password"].value = "";
+          target["repeat-password"].value = "";
+
           Router.go("/home")
         });
 
@@ -49,6 +56,7 @@ customElements.define("mydata-page", class myData extends HTMLElement {
 
   render() {
     const currentState = state.getState()
+    console.log(currentState)
     this.innerHTML = `
     <header-component></header-component>
     <section class="mydata-container">
@@ -56,11 +64,11 @@ customElements.define("mydata-page", class myData extends HTMLElement {
       <form id="mydata-form" class="mydata-form_container">
         <ul class="mydata-form_inputs">
           <label class="mydata-form_label">Nombre</label>
-          <li><input class="mydata-form_input" name="name" type="text"/></li>
+          <li><input class="mydata-form_input" name="name" value =${currentState.userName} type="text"/></li>
           <label class="mydata-form_label">Contraseña</label>
-          <li><input class="mydata-form_input" name="password" type="password"/></li>
+          <li><input class="mydata-form_input" name="password" value =${currentState.password} type="password"/></li>
           <label class="mydata-form_label">Repetir contraseña</label>
-          <li><input class="mydata-form_input" name="repeat-password" type="password"/></li>
+          <li><input class="mydata-form_input" name="repeat-password" value =${currentState.password} type="password"/></li>
         </ul>
         <button-primary class="save-data" >Guardar</button-primary>
           <div class="popup-error_box">
