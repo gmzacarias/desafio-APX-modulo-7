@@ -167,7 +167,9 @@ export async function petsAroundMe(lat, lng) {
     })
     const processedHits = processHits(hits)
     const petsAroundMeResponse = await getAllPetsWithIds(processedHits)
+    console.log(petsAroundMeResponse)
     return petsAroundMeResponse
+
   } catch (error) {
     throw error
   }
