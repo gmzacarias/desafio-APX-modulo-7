@@ -17,6 +17,6 @@ import { state } from "./state"
 import { initRouter } from "./router"
 
 (function main() {
-  state.init()
+  state.initState()
   initRouter(document.querySelector(".root"))
 })();

@@ -1,10 +1,10 @@
 import "dotenv/config";
 import { map } from "lodash";
 
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? "https://desafio-apx-modulo-7.onrender.com" 
+const API_BASE_URL = process.env.NODE_ENV === 'production'
+  ? "https://desafio-apx-modulo-7.onrender.com"
   : "http://localhost:3000";
-  
+
 export const state = {
   data: {
     myPets: []
@@ -21,16 +21,24 @@ export const state = {
     return this.data;
   },
 
-  init() {
-    const retrievedData = JSON.parse(localStorage.getItem("data"))
-    if (!retrievedData) {
-      return
-    }
-    else {
-      this.setState(retrievedData)
+  getData() {
+    const dataJSON = localStorage.getItem("data");
+    return JSON.parse(dataJSON);
+  },
 
+  initState() {
+    const retrievedData = this.getData()
+    if (!retrievedData) {
+      this.setState({
+        data:{
+          myPets:[]
+        }
+      })
+    }else {
+      return this.setState(retrievedData)
     }
   },
+
   setState(newState) {
     localStorage.setItem("data", JSON.stringify(newState))
     this.data = newState;
@@ -185,7 +193,7 @@ export const state = {
     })
     const petsToJson = await getpetsAroundMe.json()
     const petsToList = this.dataPets(petsToJson)
-    
+
     return petsToList
   },
 
